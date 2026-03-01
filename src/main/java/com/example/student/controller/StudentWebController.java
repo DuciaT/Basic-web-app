@@ -6,6 +6,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+import java.util.List;
+import java.util.Collections;
+
 @Controller
 public class StudentWebController {
 
@@ -49,9 +53,23 @@ public class StudentWebController {
         service.getById(id).ifPresent(s -> model.addAttribute("student", s));
         return "form";
     }
+
     @PostMapping("/students/delete/{id}")
     public String deleteStudent(@PathVariable String id) {
         service.deleteById(id);
         return "redirect:/students";
+    }
+    @GetMapping("/students/search")
+    public String searchById(@RequestParam String id, Model model) {
+
+        Optional<Student> studentOpt = service.getById(id);
+
+        List<Student> result = studentOpt
+                .map(List::of)
+                .orElse(Collections.emptyList());
+
+        model.addAttribute("students", result);
+
+        return "list";
     }
 }
