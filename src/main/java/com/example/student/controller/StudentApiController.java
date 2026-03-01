@@ -55,8 +55,4 @@ public class StudentApiController {
         service.deleteById(id);
         return ResponseEntity.noContent().build();
     }
-    @GetMapping("/test")
-    public List<Student> test() {
-        return studentRepository.findAll();
-    }
 }
