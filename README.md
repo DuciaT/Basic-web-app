@@ -99,14 +99,20 @@ Tại sao mỗi lần tắt ứng dụng và chạy lại, dữ liệu cũ trong
 Nguyên nhân là do cấu hình spring.jpa.hibernate.ddl-auto được đặt ở chế độ create hoặc create-drop, khiến Hibernate tự động xóa và tạo lại các bảng trong cơ sở dữ liệu mỗi khi ứng dụng khởi động, dẫn đến việc toàn bộ dữ liệu cũ bị mất.
 
 ## 5. Screenshot các module (Lab 4)
-Module 1: (Tên module)
+## Screenshot
 
-Mô tả:
-Mô tả ngắn chức năng của module.
+### Trang chính
+![Trang chính](screenshot/main.png)
 
-Module 2: (Tên module)
+### Thêm sinh viên
+![Form thêm sinh viên](screenshot/add.png)
 
-Mô tả:
-Mô tả ngắn chức năng của module.
+### Thêm sinh viên thành công
+![Thêm thành công](screenshot/add_done.png)
 
-Module 3: (Tên module)
+### Xem chi tiết sinh viên
+![Chi tiết sinh viên](screenshot/detail.png)
+
+### Xóa sinh viên
+![Xác nhận xóa](screenshot/delete_check.png)
+![Sau khi xóa](screenshot/delete_after.png)
