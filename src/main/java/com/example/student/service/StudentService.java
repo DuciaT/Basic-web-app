@@ -16,11 +16,11 @@ public class StudentService {
         this.repository = repository;
     }
 
-    public List<Student> findAll() {
+    public List<Student> getAll() {
         return repository.findAll();
     }
 
-    public Optional<Student> findById(Long id) {
+    public Optional<Student> getById(String id) {
         return repository.findById(id);
     }
 
@@ -28,7 +28,7 @@ public class StudentService {
         return repository.save(student);
     }
 
-    public void deleteById(Long id) {
+    public void deleteById(String id) {
         repository.deleteById(id);
     }
 }

@@ -4,6 +4,7 @@ import com.example.student.entity.Student;
 import com.example.student.service.StudentService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.net.URI;
 import java.util.List;
@@ -12,6 +13,8 @@ import java.util.List;
 @RequestMapping("/api/students")
 public class StudentApiController {
 
+    @Autowired
+
     private final StudentService service;
 
     public StudentApiController(StudentService service) {
@@ -19,13 +22,13 @@ public class StudentApiController {
     }
 
     @GetMapping
-    public List<Student> all() {
-        return service.findAll();
+    public List<Student> getAllStudents() {
+        return service.getAll();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Student> get(@PathVariable Long id) {
-        return service.findById(id)
+    public ResponseEntity<Student> getStudentById(@PathVariable String id) {
+        return service.getById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
@@ -37,8 +40,8 @@ public class StudentApiController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Student> update(@PathVariable Long id, @RequestBody Student student) {
-        return service.findById(id).map(existing -> {
+    public ResponseEntity<Student> update(@PathVariable String id, @RequestBody Student student) {
+        return service.getById(id).map(existing -> {
             existing.setName(student.getName());
             existing.setEmail(student.getEmail());
             existing.setAge(student.getAge());
@@ -48,8 +51,12 @@ public class StudentApiController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id) {
+    public ResponseEntity<Void> delete(@PathVariable String id) {
         service.deleteById(id);
         return ResponseEntity.noContent().build();
+    }
+    @GetMapping("/test")
+    public List<Student> test() {
+        return studentRepository.findAll();
     }
 }

@@ -22,8 +22,14 @@ public class StudentWebController {
 
     @GetMapping("/students")
     public String list(Model model) {
-        model.addAttribute("students", service.findAll());
+        model.addAttribute("students", service.getAll());
         return "list";
+    }
+
+    @GetMapping("/students/{id}")
+    public String detail(@PathVariable String id, Model model) {
+        service.getById(id).ifPresent(s -> model.addAttribute("student", s));
+        return "detail";
     }
 
     @GetMapping("/students/new")
@@ -39,8 +45,8 @@ public class StudentWebController {
     }
 
     @GetMapping("/students/edit/{id}")
-    public String editForm(@PathVariable Long id, Model model) {
-        service.findById(id).ifPresent(s -> model.addAttribute("student", s));
+    public String editForm(@PathVariable String id, Model model) {
+        service.getById(id).ifPresent(s -> model.addAttribute("student", s));
         return "form";
     }
 }
