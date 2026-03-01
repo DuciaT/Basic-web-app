@@ -20,7 +20,7 @@ Web Service được deploy từ Lab 5, cung cấp các API phục vụ cho ứn
 ---
 
 ## 3. Hướng dẫn chạy dự án
-3.1. Yêu cầu môi trường
+# 3.1. Yêu cầu môi trường
 
 Java Development Kit (JDK): 17
 
@@ -30,13 +30,13 @@ Database: PostgreSQL
 
 Docker: (không bắt buộc, chỉ dùng nếu chạy bằng container)
 
-3.2. Cài đặt
+# 3.2. Cài đặt
 
 Clone source code từ repository:
 
 git clone <repository-url>
 cd <project-folder>
-3.3. Cấu hình môi trường
+# 3.3. Cấu hình môi trường
 
 Tạo file .env tại thư mục gốc của project và cấu hình như sau:
 
@@ -56,7 +56,7 @@ PostgreSQL phải đang chạy trước khi khởi động ứng dụng
 
 Database cần được tạo sẵn trong PostgreSQL
 
-3.4. Chạy dự án
+# 3.4. Chạy dự án
 Cách 1: Chạy bằng Maven
 mvn clean spring-boot:run
 Cách 2: Build và chạy file JAR
@@ -65,7 +65,7 @@ java -jar target/student-0.0.1-SNAPSHOT.jar
 (Tuỳ chọn) Chạy bằng Docker
 docker build -t student-app .
 docker run -p 8080:8080 --env-file .env student-app
-3.5. Truy cập ứng dụng
+# 3.5. Truy cập ứng dụng
 
 Web UI:
 http://localhost:8080
@@ -73,7 +73,7 @@ http://localhost:8080
 REST API:
 http://localhost:8080/api/students
 
-4. Câu trả lời lý thuyết (Lab)
+## 4. Câu trả lời lý thuyết (Lab)
 Câu 1
 
 Câu hỏi:
@@ -96,7 +96,7 @@ Câu 3
 
 (Tiếp tục nếu còn)
 
-5. Screenshot các module (Lab 4)
+## 5. Screenshot các module (Lab 4)
 Module 1: (Tên module)
 
 Mô tả:
