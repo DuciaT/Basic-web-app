@@ -65,6 +65,7 @@ java -jar target/student-0.0.1-SNAPSHOT.jar
 (Tuỳ chọn) Chạy bằng Docker
 docker build -t student-app .
 docker run -p 8080:8080 --env-file .env student-app
+
 **3.5. Truy cập ứng dụng**
 
 Web UI:
