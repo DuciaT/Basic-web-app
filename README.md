@@ -11,7 +11,7 @@
 ## 2. Public URL của Web Service (Lab 5)
 - **URL:**  
 
-https://your-public-url-here
+https://student-management-api-6shg.onrender.com/
 
 
 - **Mô tả ngắn:**  
@@ -116,3 +116,7 @@ Nguyên nhân là do cấu hình spring.jpa.hibernate.ddl-auto được đặt �
 ### Xóa sinh viên
 ![Xác nhận xóa](screenshot/delete_check.png)
 ![Sau khi xóa](screenshot/delete_after.png)
+
+## GIT LINK
+
+https://github.com/DuciaT/Basic-web-app
