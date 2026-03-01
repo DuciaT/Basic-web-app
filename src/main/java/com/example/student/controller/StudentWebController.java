@@ -49,4 +49,9 @@ public class StudentWebController {
         service.getById(id).ifPresent(s -> model.addAttribute("student", s));
         return "form";
     }
+    @PostMapping("/students/delete/{id}")
+    public String deleteStudent(@PathVariable String id) {
+        service.deleteById(id);
+        return "redirect:/students";
+    }
 }

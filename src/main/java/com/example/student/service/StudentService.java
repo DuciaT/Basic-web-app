@@ -29,6 +29,9 @@ public class StudentService {
     }
 
     public void deleteById(String id) {
+        if (!repository.existsById(id)) {
+            throw new RuntimeException("Student not found");
+        }
         repository.deleteById(id);
     }
 }

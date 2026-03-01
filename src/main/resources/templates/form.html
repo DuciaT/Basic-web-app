@@ -8,7 +8,10 @@
 <body>
     <h1 th:text="${student.id} != null ? 'Edit Student' : 'Add Student'"></h1>
     <form th:action="@{/students}" th:object="${student}" method="post">
-        <input type="hidden" th:field="*{id}" />
+        <div>
+            <label>ID:</label>
+            <input type="text" th:field="*{id}" />
+        </div>
         <div>
             <label>Name:</label>
             <input type="text" th:field="*{name}" />
